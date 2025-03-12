@@ -12,6 +12,7 @@ main(int argc, char *argv[])
     }
 
     sleep(atoi(argv[1]));
+    fprintf(1, "sleep time over...\n");
 
     
     exit(0);
