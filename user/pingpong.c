@@ -6,7 +6,7 @@ int main(int argc, char *argv[])
 {
     int pipe1[2];
     int pipe2[2];
-    char buf[1]='a';
+    char buf[] = {'a'};
     pipe(pipe1);
     pipe(pipe2);
     int ret,pid;
