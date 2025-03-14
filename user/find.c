@@ -91,7 +91,7 @@ void find(char *path,char *target)
 int
 main(int argc, char *argv[])
 {
-  int i;
+
   if(argc < 2){
     fprintf(2, "Usage: find path target\n");
     exit(1);
