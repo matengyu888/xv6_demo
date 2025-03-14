@@ -24,8 +24,8 @@ fmtname(char *path)
 
 int norecursive(char *path)
 {
-  char temp[DIRSIZ+1];
-  memmove(temp,fmtname(path),strlen(fmtname(path)));
+  char *temp=fmtname(path);
+
   if(temp[0]=='.')
   {
     return 1;
@@ -77,11 +77,11 @@ void find(char *path,char *target)
         printf("ls: cannot stat %s\n", buf);
         continue;
       }
-      printf("%s\n", buf);
-      // if(st.type==T_DIR && !norecursive(buf))
-      // {
-      //   find(buf,target);
-      // }
+      //printf("%s\n", buf);
+      if(!norecursive(buf))
+      {
+        find(buf,target);
+      }
     }
     break;
   }
