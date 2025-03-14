@@ -26,7 +26,11 @@ int norecursive(char *path)
 {
   char *temp=fmtname(path);
 
-  if(temp[0]=='.')
+  if(temp[0]=='.'&&temp[1]==' ')
+  {
+    return 1;
+  }
+  if(temp[0]=='.'&&temp[1]=='.'&&temp[2]==' ')
   {
     return 1;
   }
