@@ -18,7 +18,7 @@ fmtname(char *path)
   if(strlen(p) >= DIRSIZ)
     return p;
   memmove(buf, p, strlen(p));
-  memset(buf+strlen(p), ' ', DIRSIZ-strlen(p));
+  memset(buf+strlen(p), 0, DIRSIZ-strlen(p));
   return buf;
 }
 
@@ -26,11 +26,11 @@ int norecursive(char *path)
 {
   char *temp=fmtname(path);
 
-  if(temp[0]=='.'&&temp[1]==' ')
+  if(temp[0]=='.'&&temp[1]==0)
   {
     return 1;
   }
-  if(temp[0]=='.'&&temp[1]=='.'&&temp[2]==' ')
+  if(temp[0]=='.'&&temp[1]=='.'&&temp[2]==0)
   {
     return 1;
   }
