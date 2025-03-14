@@ -39,6 +39,7 @@ void runpross(int readfd)
                 f_fork=1;
                 if(fork()==0)
                 {
+                    close(readfd);
                     close(pipes[1]);
                     runpross(pipes[0]);
                 }
