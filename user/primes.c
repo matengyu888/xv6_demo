@@ -5,10 +5,10 @@
 
 void runpross(int readfd)
 {
-    int f_fork;
-    int prime;
+    int f_fork=0;
+    int prime=0;
     int pipes[2];
-    int num;
+    int num=0;
     while(1)
     {
         int read_bytes = read(readfd, &num, 4);
