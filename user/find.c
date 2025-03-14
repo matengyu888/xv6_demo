@@ -50,7 +50,7 @@ void find(char *path,char *target)
     close(fd);
     return;
   }
-
+  printf("hellp\n");
   if(strcmp(fmtname(path),target)==0)
   {
     printf("%s\n",path);
@@ -105,5 +105,5 @@ main(int argc, char *argv[])
     find(argv[1],argv[2]);
     exit(0);
   }
-  exit(0);
+
 }
