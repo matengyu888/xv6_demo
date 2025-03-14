@@ -11,12 +11,19 @@ void runpross(int readfd)
     int num;
     while(1)
     {
-        if(read(readfd, &num, sizeof(num)) == 0)
-        {
-            close(readfd);
-            int child;  
-            wait(&child);
-            exit(0);
+        int read_bytes = read(readfd, &num, 4);
+
+        // left neighbor has no more number to provide
+        if (read_bytes == 0) {
+          close(readfd);
+          if (f_fork) {
+            // tell my children I have no more number to offer
+            close(pipes[1]);
+            // wait my child termination
+            int child_pid;
+            wait(&child_pid);
+          }
+          exit(0);
         }
         if(prime==0)
         {
@@ -56,5 +63,5 @@ int main(int argc, char *argv[]) {
     }
     close(p[1]);
     runpross(p[0]);
-
+    exit(0);
   }
