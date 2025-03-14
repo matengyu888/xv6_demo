@@ -50,7 +50,7 @@ void find(char *path,char *target)
     close(fd);
     return;
   }
-  printf("hellp\n");
+  //printf("hellp\n");
   if(strcmp(fmtname(path),target)==0)
   {
     printf("%s\n",path);
@@ -77,7 +77,7 @@ void find(char *path,char *target)
         printf("ls: cannot stat %s\n", buf);
         continue;
       }
-      printf("%s\n", fmtname(buf));
+      //printf("%s\n", fmtname(buf));
       if(st.type==T_DIR && !norecursive(buf))
       {
         find(buf,target);
