@@ -77,7 +77,7 @@ void find(char *path,char *target)
         printf("ls: cannot stat %s\n", buf);
         continue;
       }
-      //printf("%s\n", fmtname(buf));
+      printf("%s\n", buf);
       if(st.type==T_DIR && !norecursive(buf))
       {
         find(buf,target);
