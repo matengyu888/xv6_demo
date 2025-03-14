@@ -78,10 +78,10 @@ void find(char *path,char *target)
         continue;
       }
       printf("%s\n", buf);
-      if(st.type==T_DIR && !norecursive(buf))
-      {
-        find(buf,target);
-      }
+      // if(st.type==T_DIR && !norecursive(buf))
+      // {
+      //   find(buf,target);
+      // }
     }
     break;
   }
