@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
         xargv[xargc]=0;
         xargc++;
         exec(xargv[0],xargv);
-        exit(1);
+        exit(0);
       }
 
     }
