@@ -12,15 +12,15 @@ int main(int argc, char *argv[])
   char buf[MAXARG];
   read(0, buf, MAXARG);
   printf("buf: %s\n", buf);
-  char *p = buf;
+  // char *p = buf;
 
-  int xargc = 0;
-  char *xargv[MAXARG];
-  for(int i = 1; i < MAXARG; i++)
-  {
-    xargv[xargc] = argv[i];
-    xargc++;
-  }
+  // int xargc = 0;
+  // char *xargv[MAXARG];
+  // for(int i = 1; i < MAXARG; i++)
+  // {
+  //   xargv[xargc] = argv[i];
+  //   xargc++;
+  // }
   exit(0);
 }
 
