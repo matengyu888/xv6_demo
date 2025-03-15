@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
   sleep(10);
   char buf[MAXARG];
   read(0, buf, MAXARG);
-  printf("buf: %s\n", buf);
+  // printf("buf: %s\n", buf);
 
   int xargc = 0;
   char *xargv[MAXARG];
@@ -33,6 +33,7 @@ int main(int argc, char *argv[])
       }
       else if(pid==0)
       {
+        buf[i]=0;
         xargv[xargc]=p;
         xargc++;
         xargv[xargc]=0;
